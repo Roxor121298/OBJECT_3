@@ -39,10 +39,12 @@ class MainActivity : AppCompatActivity() {
     inner class Ecouteur : View.OnClickListener {
         override fun onClick(event: View) {
             val i: Intent
-            if (event === ajouter) {
+            // il faut que ce soit le meme object (this et equal)
+            // == est un equal tandit que === est pour deux reference au meme object
+            if (event == ajouter) {
                 i = Intent(this@MainActivity, AjouterActivity::class.java)
                 startActivity(i)
-            } else if (event === afficher) {
+            } else if (event == afficher) {
                 i = Intent(this@MainActivity, AfficherActivity::class.java)
                 startActivity(i)
             } else {
