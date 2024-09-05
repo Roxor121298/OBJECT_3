@@ -1,5 +1,6 @@
 package com.example.annexe1
 
+import android.R
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +12,8 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
-import java.util.Vector
+import java.util.Scanner
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         retourner()
         signer()
+        //scanner()
     }
 
     fun retournerLigneProf(): Int{
@@ -125,6 +128,23 @@ class MainActivity : AppCompatActivity() {
         bw.write("\n$nom")
 
         bw.close()
+
+    }
+
+    fun scanner(){
+        var compteur = 0
+        val fis = openFileInput("fichier_annexe1.txt")
+        fis.use {
+            var s = Scanner(fis);
+            s.use{
+                while(s.hasNext()){
+                    println(s.next())
+                    compteur++
+                }
+            }
+        }
+
+
 
     }
 
