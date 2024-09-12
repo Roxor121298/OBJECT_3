@@ -32,7 +32,7 @@ class AfficherActivity : AppCompatActivity() {
 
     fun conversion(): Vector<String>{
         var listeTexteMemos = Vector<String>();
-        var listeMemo = Singletonmemos.getInstance().liste
+        var listeMemo = Singletonmemos.getInstance(applicationContext).liste
         for (memo in listeMemo){
             listeTexteMemos.add(memo.memoTexte)
         }

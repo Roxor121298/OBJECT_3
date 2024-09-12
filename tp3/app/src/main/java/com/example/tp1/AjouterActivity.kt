@@ -51,7 +51,7 @@ class AjouterActivity : AppCompatActivity() {
                 d.show()
             }
             else { // ajouterFlux
-                Singletonmemos.getInstance().ajoutermemo(Memo(texteMemo,date))
+                Singletonmemos.getInstance(applicationContext).ajoutermemo(Memo(texteMemo,date))
                 finish()
             }
 
