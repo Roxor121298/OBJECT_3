@@ -35,14 +35,14 @@ class MainActivity : AppCompatActivity() {
         afficher.setOnClickListener(ec)
         quitter.setOnClickListener(ec)
 
-        Singletonmemos.getInstance(applicationContext).deserializerListe();
+        Singletonmemos2.getInstance(applicationContext)?.deserializerListe();
     }
 
     override fun onStop() {
         super.onStop()
         // on veut sérialiser la liste ds un fichier pour la récpérer quand on va revenir
         try{
-            Singletonmemos.getInstance(applicationContext).serializerListe();
+            Singletonmemos2.getInstance(applicationContext)?.serializerListe();
         }
         catch (e:Exception){
             e.printStackTrace()
