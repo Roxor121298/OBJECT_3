@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         liste.setOnItemClickListener((AdapterView<?> parent, View view, int position, long id) -> {
             Hashtable<String, Object> rep  = vect.get(position);
             String nom = (String) rep.get("nom");
-            Toast.makeText(getApplicationContext(),nom, Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(),nom, Toast.LENGTH_LONG).show();
         });
 
 
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Hashtable<String, Object> rep  = vect.get(position);
             String nom = (String) rep.get("nom");
-            Toast.makeText(getApplicationContext(),nom, Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(),nom, Toast.LENGTH_LONG).show();
         }
 
     }
