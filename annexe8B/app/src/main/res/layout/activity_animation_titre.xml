@@ -8,11 +8,13 @@
     tools:context=".Animation_titre">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/animation_titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="animation_titre"
-        tools:layout_editor_absoluteX="168dp"
-        tools:layout_editor_absoluteY="269dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

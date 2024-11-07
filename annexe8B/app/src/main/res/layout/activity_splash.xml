@@ -8,14 +8,27 @@
     tools:context=".Splash">
 
 
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soleil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:src="@drawable/cerclerougefondtransparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="splash"
-        tools:layout_editor_absoluteX="168dp"
-        tools:layout_editor_absoluteY="269dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
