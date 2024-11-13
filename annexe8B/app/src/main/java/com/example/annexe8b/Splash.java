@@ -2,6 +2,7 @@ package com.example.annexe8b;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -34,27 +35,53 @@ public class Splash extends AppCompatActivity {
         image = findViewById(R.id.image);
         ui = true;
 
-        image.setOnClickListener(v -> SoleilAnimation());
+        splash.setOnClickListener(v -> SoleilAnimation());
+    }
+
+    private void Animation(){
+        AnimatorSet animatorSet = new AnimatorSet();
+
+    }
+
+    private void descendreAnimation(){
+
+
+    }
+
+    private void changerCouleurAnimation(){
+
     }
 
     private void SoleilAnimation(){
-        float target = ui ? 0.5f : 5f;
-        AnimatorSet animatorSet = new AnimatorSet();
+        float targetScale = ui ? 8f : 0.5f;
+        float targetMove = ui ? 550f : -550f;
+        int duration = 400;
 
-        ObjectAnimator animatory = ObjectAnimator.ofFloat(image, "ScaleY", target);
-        ObjectAnimator animatorx = ObjectAnimator.ofFloat(image, "ScaleX", target);
+        AnimatorSet scale = new AnimatorSet();
+        AnimatorSet full = new AnimatorSet();
 
-        animatorx.setDuration(300);
-        animatory.setDuration(300);
+        ObjectAnimator animatormove = ObjectAnimator.ofFloat(image, "translationY", targetMove);
+        animatormove.setDuration(duration);
 
-        animatorSet.playTogether(animatory,animatorx);
+        ObjectAnimator animatorChangeColor = ObjectAnimator.ofArgb(splash, "textColor", Color.BLACK, Color.WHITE);
+        animatorChangeColor.setDuration(duration);
 
+        ObjectAnimator animatory = ObjectAnimator.ofFloat(image, "ScaleY", targetScale);
+        ObjectAnimator animatorx = ObjectAnimator.ofFloat(image, "ScaleX", targetScale);
+        animatorx.setDuration(duration);
+        animatory.setDuration(duration);
 
-        animatorSet.start();
+        scale.playTogether(animatory,animatorx,animatorChangeColor);
+
+        full.playSequentially(animatormove, scale);
+        full.start();
         ui = !ui;
 
-
     }
+
+
+
+
 
 
 }

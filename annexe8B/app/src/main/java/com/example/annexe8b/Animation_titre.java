@@ -38,7 +38,6 @@ public class Animation_titre extends AppCompatActivity {
 
         AnimatorSet animatorSet = new AnimatorSet();
 
-
         ObjectAnimator animex =  ObjectAnimator.ofFloat(animation_titre, "ScaleX", target);
         animex.setDuration(300); // sur combien de temps on fait cette animation
 
