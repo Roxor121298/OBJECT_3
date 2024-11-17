@@ -1,0 +1,17 @@
+[
+  {
+    "marque": "Toyota",
+    "modele": "Corolla",
+    "prix": 25000
+  },
+  {
+    "marque": "Honda",
+    "modele": "Civic",
+    "prix": 27000
+  },
+  {
+    "marque": "Ford",
+    "modele": "Focus",
+    "prix": 22000
+  }
+]
